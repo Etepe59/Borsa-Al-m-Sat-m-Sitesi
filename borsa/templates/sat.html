@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card bg-secondary text-light p-4 border-danger">
+            <h4>📉 Hisse Sat</h4>
+            <form method="post">
+                <div class="mb-3">
+                    <label class="form-label">Portföyünüzdeki Hisseler</label>
+                    <select name="ad" class="form-select" required>
+                        {% for h_ad in portfoy %}
+                        <option value="{{ h_ad }}">{{ h_ad }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Satılacak Adet</label>
+                    <input type="number" name="adet" class="form-control" min="1" required>
+                </div>
+                <button class="btn btn-danger w-100">Satış Yap (Push to Stack)</button>
+            </form>
+            <a href="/" class="btn btn-link text-light mt-2">Geri Dön</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

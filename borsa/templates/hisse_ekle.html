@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card bg-secondary text-light p-4">
+            <h4>➕ Piyasaya Hisse Ekle (BST Insert)</h4>
+            <p class="small">Eklediğiniz hisse, fiyatına göre ikili arama ağacına yerleştirilecektir.</p>
+            <form method="post">
+                <div class="mb-3">
+                    <label class="form-label">Hisse Adı (Sembol)</label>
+                    <input class="form-control" type="text" name="ad" placeholder="Örn: ASELS" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Birim Fiyat (₺)</label>
+                    <input class="form-control" type="number" name="fiyat" placeholder="Örn: 50" required>
+                </div>
+                <button class="btn btn-primary w-100">Ağaca Ekle</button>
+            </form>
+            <a href="/" class="btn btn-link text-light mt-2">Vazgeç</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
